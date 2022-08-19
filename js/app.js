@@ -2215,27 +2215,34 @@
     }), 0);
     const elem = document.querySelector(".sort--blue");
     const header = document.querySelector(".header");
-    if (elem) document.addEventListener("scroll", (function() {
-        const posTop = elem.getBoundingClientRect().top;
-        const headerHeight = header.offsetHeight;
-        header.classList.toggle("hidden", posTop - headerHeight <= 0);
-        if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
-            const vh = document.querySelectorAll(".vh");
-            const height = document.documentElement.clientHeight;
-            for (let i = 0; i < vh.length - 1; i++) {
-                const vhTop = vh[i + 1].getBoundingClientRect().top;
-                if (vhTop - height <= 0 && vhTop > 0 && vh[i].offsetHeight < vh[i + 1].offsetHeight) {
-                    vh[i].classList.add("_active");
-                    vh[i + 1].classList.add("secBlock");
-                    vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
-                } else {
-                    vh[i].classList.remove("_active");
-                    vh[i + 1].classList.remove("secBlock");
-                    vh[i + 1].style.marginTop = `0px`;
+    window.onload = function() {
+        if (elem) document.addEventListener("scroll", (function() {
+            const posTop = elem.getBoundingClientRect().top;
+            const headerHeight = header.offsetHeight;
+            header.classList.toggle("white", posTop - headerHeight <= 0);
+            if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
+                const vh = document.querySelectorAll(".vh");
+                const height = document.documentElement.clientHeight;
+                for (let i = 0; i < vh.length - 1; i++) {
+                    const vhTop = vh[i + 1].getBoundingClientRect().top;
+                    const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
+                    if (vh[i].offsetHeight > vh[i + 1].offsetHeight) {
+                        vh[i + 1].style.paddingTop = `${newPadding}px`;
+                        vh[i + 1].style.paddingBottom = `${newPadding}px`;
+                    }
+                    if (vhTop - height <= 0 && vhTop >= 0) {
+                        vh[i].classList.add("_active");
+                        vh[i + 1].classList.add("secBlock");
+                        vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
+                    } else {
+                        vh[i].classList.remove("_active");
+                        vh[i + 1].classList.remove("secBlock");
+                        vh[i + 1].style.marginTop = `0px`;
+                    }
                 }
             }
-        }
-    }));
+        }));
+    };
     isWebp();
     menuInit();
 })();
