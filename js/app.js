@@ -2222,9 +2222,14 @@
                 const headerHeight = header.offsetHeight;
                 header.classList.toggle("white", posTop - headerHeight <= 0);
             }));
+            const vh = document.querySelectorAll(".vh");
+            if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
+                e.classList.add("vhBig");
+                let vhBig = .01 * window.innerHeight;
+                document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
+            }));
             document.addEventListener("scroll", (function() {
                 if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
-                    const vh = document.querySelectorAll(".vh");
                     const height = window.screen.height;
                     if (!(vh[0].offsetHeight < height)) for (let i = 0; i < vh.length - 1; i++) {
                         const vhTop = vh[i + 1].getBoundingClientRect().top;
@@ -2242,7 +2247,11 @@
                             vh[i + 1].classList.remove("secBlock");
                             vh[i + 1].style.marginTop = `0px`;
                         }
-                    }
+                    } else vh.forEach((e => {
+                        e.classList.add("vhBig");
+                        let vhBig = .01 * window.innerHeight;
+                        document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
+                    }));
                 }
             }));
         }

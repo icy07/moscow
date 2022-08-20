@@ -494,6 +494,10 @@ h6 {
 .vh.secBlock {
   z-index: 2;
 }
+.vh.vhBig {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
 
 .main {
   background: url("../img/bg.png") center/cover no-repeat;
