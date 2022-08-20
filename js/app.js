@@ -2258,7 +2258,7 @@
                         }
                     } else vh.forEach((e => {
                         e.classList.add("vhBig");
-                        let vhBig = .01 * window.innerHeight;
+                        let vhBig = .01 * window.screen.height;
                         document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                     }));
                 }
