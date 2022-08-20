@@ -2229,9 +2229,7 @@
             let span4 = document.querySelector(".test__span4");
             if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                 if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
-                    e.classList.add("vhBig");
-                    let vhBig = .01 * window.outerHeight;
-                    document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
+                    e.style.height = window.screen.height + 1 + "px";
                 }));
                 fixedBlocks(vh, window.screen.height);
                 span1.innerHTML = vh[0].offsetHeight;
@@ -2247,9 +2245,7 @@
                     span3.innerHTML = window.innerHeight;
                     span4.innerHTML = window.pageYOffset;
                     if (!(vh[0].offsetHeight < height)) fixedBlocks(vh, height); else vh.forEach((e => {
-                        e.classList.add("vhBig");
-                        let vhBig = .01 * window.outerHeight;
-                        document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
+                        e.style.height = window.screen.height + 1 + "px";
                     }));
                 }
             }));
