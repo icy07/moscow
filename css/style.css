@@ -468,16 +468,6 @@ h6 {
   }
 }
 
-.test {
-  position: fixed;
-  top: 3.125rem;
-  left: 1.875rem;
-  z-index: 100;
-  background-color: #fff;
-}
-.test p {
-  color: blue;
-}
 .scroll {
   width: 100%;
   position: relative;
@@ -503,10 +493,6 @@ h6 {
 }
 .vh.secBlock {
   z-index: 2;
-}
-.vh.bigVH {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
 }
 
 .main {
@@ -1022,7 +1008,7 @@ h6 {
   font-weight: 800;
 }
 .sort__img {
-  max-height: 12.5rem;
+  max-height: 18.75rem;
 }
 .sort__img img {
   max-width: 100%;
