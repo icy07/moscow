@@ -478,6 +478,7 @@ h6 {
 @media (min-height: 38.1875em) and (min-width: 65.6875em) {
   .vh {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     overflow: hidden;
     top: 0;
