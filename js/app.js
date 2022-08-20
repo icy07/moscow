@@ -2225,14 +2225,16 @@
             document.addEventListener("scroll", (function() {
                 if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                     const vh = document.querySelectorAll(".vh");
-                    const height = window.screen.height;
+                    const height = window.outerHeight;
                     let span1 = document.querySelector(".test__span-1");
                     let span2 = document.querySelector(".test__span-2");
                     span1.innerHTML = vh[0].offsetHeight;
-                    span2.innerHTML = window.screen.height;
+                    span2.innerHTML = window.outerHeight;
                     if (!(vh[0].offsetHeight < height)) {
                         span1.innerHTML = vh[0].offsetHeight;
-                        span2.innerHTML = window.screen.height;
+                        span2.innerHTML = window.outerHeight;
+                        console.log(window.innerHeight);
+                        console.log(window.outerHeight);
                         for (let i = 0; i < vh.length - 1; i++) {
                             const vhTop = vh[i + 1].getBoundingClientRect().top;
                             const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
