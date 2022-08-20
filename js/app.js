@@ -2228,6 +2228,7 @@
                 let vhBig = .01 * window.screen.height;
                 document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
             }));
+            fixedBlocks(vh, window.screen.height);
             let span1 = document.querySelector(".test__span1");
             let span2 = document.querySelector(".test__span2");
             let span3 = document.querySelector(".test__span3");
@@ -2240,23 +2241,7 @@
                     span1.innerHTML = vh[0].offsetHeight;
                     span2.innerHTML = window.screen.height;
                     span3.innerHTML = window.innerHeight;
-                    if (!(vh[0].offsetHeight < height)) for (let i = 0; i < vh.length - 1; i++) {
-                        const vhTop = vh[i + 1].getBoundingClientRect().top;
-                        const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
-                        if (vh[i].offsetHeight > vh[i + 1].offsetHeight) {
-                            vh[i + 1].style.paddingTop = `${newPadding}px`;
-                            vh[i + 1].style.paddingBottom = `${newPadding}px`;
-                        }
-                        if (vhTop - height <= 0 && vhTop >= 0) {
-                            vh[i].classList.add("_active");
-                            vh[i + 1].classList.add("secBlock");
-                            vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
-                        } else {
-                            vh[i].classList.remove("_active");
-                            vh[i + 1].classList.remove("secBlock");
-                            vh[i + 1].style.marginTop = `0px`;
-                        }
-                    } else vh.forEach((e => {
+                    if (!(vh[0].offsetHeight < height)) fixedBlocks(vh, height); else vh.forEach((e => {
                         e.classList.add("vhBig");
                         let vhBig = .01 * window.screen.height;
                         document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
@@ -2265,6 +2250,25 @@
             }));
         }
     };
+    function fixedBlocks(vh, height) {
+        for (let i = 0; i < vh.length - 1; i++) {
+            const vhTop = vh[i + 1].getBoundingClientRect().top;
+            const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
+            if (vh[i].offsetHeight > vh[i + 1].offsetHeight) {
+                vh[i + 1].style.paddingTop = `${newPadding}px`;
+                vh[i + 1].style.paddingBottom = `${newPadding}px`;
+            }
+            if (vhTop - height <= 0 && vhTop >= 0) {
+                vh[i].classList.add("_active");
+                vh[i + 1].classList.add("secBlock");
+                vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
+            } else {
+                vh[i].classList.remove("_active");
+                vh[i + 1].classList.remove("secBlock");
+                vh[i + 1].style.marginTop = `0px`;
+            }
+        }
+    }
     isWebp();
     menuInit();
 })();
