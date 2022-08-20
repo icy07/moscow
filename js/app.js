@@ -2223,20 +2223,22 @@
                 header.classList.toggle("white", posTop - headerHeight <= 0);
             }));
             const vh = document.querySelectorAll(".vh");
-            if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
-                e.classList.add("vhBig");
-                let vhBig = .01 * window.screen.height;
-                document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
-            }));
-            fixedBlocks(vh, window.screen.height);
             let span1 = document.querySelector(".test__span1");
             let span2 = document.querySelector(".test__span2");
             let span3 = document.querySelector(".test__span3");
             let span4 = document.querySelector(".test__span4");
-            span1.innerHTML = vh[0].offsetHeight;
-            span2.innerHTML = window.screen.height;
-            span3.innerHTML = window.innerHeight;
-            span4.innerHTML = window.pageYOffset;
+            if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
+                if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
+                    e.classList.add("vhBig");
+                    let vhBig = .01 * window.innerHeight;
+                    document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
+                }));
+                fixedBlocks(vh, window.screen.height);
+                span1.innerHTML = vh[0].offsetHeight;
+                span2.innerHTML = window.screen.height;
+                span3.innerHTML = window.innerHeight;
+                span4.innerHTML = window.pageYOffset;
+            }
             document.addEventListener("scroll", (function() {
                 if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                     const height = window.screen.height;
@@ -2246,7 +2248,7 @@
                     span4.innerHTML = window.pageYOffset;
                     if (!(vh[0].offsetHeight < height)) fixedBlocks(vh, height); else vh.forEach((e => {
                         e.classList.add("vhBig");
-                        let vhBig = .01 * window.screen.height;
+                        let vhBig = .01 * window.innerHeight;
                         document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                     }));
                 }
