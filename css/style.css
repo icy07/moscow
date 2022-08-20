@@ -468,6 +468,17 @@ h6 {
   }
 }
 
+.test {
+  position: fixed;
+  top: 3.125rem;
+  left: 1.875rem;
+  background-color: #fff;
+  z-index: 100;
+}
+.test p {
+  color: red;
+}
+
 .scroll {
   width: 100%;
   position: relative;
