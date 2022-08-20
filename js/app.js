@@ -2219,6 +2219,7 @@
         if (elem) {
             let vhToggle = .01 * window.innerHeight;
             document.documentElement.style.setProperty("--vh", `${vhToggle}px`);
+            console.log(vhToggle);
             window.addEventListener("resize", (() => {
                 let vhToggle = .01 * window.innerHeight;
                 document.documentElement.style.setProperty("--vh", `${vhToggle}px`);
@@ -2229,7 +2230,7 @@
                 header.classList.toggle("white", posTop - headerHeight <= 0);
                 if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                     const vh = document.querySelectorAll(".vh");
-                    const height = document.documentElement.clientHeight;
+                    const height = window.innerHeight;
                     if (!(vh[0].offsetHeight < height)) for (let i = 0; i < vh.length - 1; i++) {
                         const vhTop = vh[i + 1].getBoundingClientRect().top;
                         const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
