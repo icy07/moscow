@@ -2225,7 +2225,7 @@
             const vh = document.querySelectorAll(".vh");
             if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
                 e.classList.add("vhBig");
-                let vhBig = .01 * window.innerHeight;
+                let vhBig = .01 * window.screen.height;
                 document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
             }));
             let span1 = document.querySelector(".test__span1");
