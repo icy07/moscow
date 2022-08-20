@@ -2222,40 +2222,41 @@
                 const headerHeight = header.offsetHeight;
                 header.classList.toggle("white", posTop - headerHeight <= 0);
             }));
-            if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
-                const vh = document.querySelectorAll(".vh");
-                const height = window.innerHeight;
-                let span1 = document.querySelector(".test__span-1");
-                let span2 = document.querySelector(".test__span-2");
-                span1.innerHTML = vh[0].offsetHeight;
-                span2.innerHTML = window.innerHeight;
-                if (!(vh[0].offsetHeight < height)) document.addEventListener("scroll", (function() {
+            document.addEventListener("scroll", (function() {
+                if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
+                    const vh = document.querySelectorAll(".vh");
+                    const height = window.innerHeight;
+                    let span1 = document.querySelector(".test__span-1");
+                    let span2 = document.querySelector(".test__span-2");
                     span1.innerHTML = vh[0].offsetHeight;
                     span2.innerHTML = window.innerHeight;
-                    for (let i = 0; i < vh.length - 1; i++) {
-                        const vhTop = vh[i + 1].getBoundingClientRect().top;
-                        const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
-                        if (vh[i].offsetHeight > vh[i + 1].offsetHeight) {
-                            vh[i + 1].style.paddingTop = `${newPadding}px`;
-                            vh[i + 1].style.paddingBottom = `${newPadding}px`;
+                    if (!(vh[0].offsetHeight < height)) {
+                        span1.innerHTML = vh[0].offsetHeight;
+                        span2.innerHTML = window.innerHeight;
+                        for (let i = 0; i < vh.length - 1; i++) {
+                            const vhTop = vh[i + 1].getBoundingClientRect().top;
+                            const newPadding = Math.ceil((vh[i].offsetHeight - vh[i + 1].offsetHeight) / 2);
+                            if (vh[i].offsetHeight > vh[i + 1].offsetHeight) {
+                                vh[i + 1].style.paddingTop = `${newPadding}px`;
+                                vh[i + 1].style.paddingBottom = `${newPadding}px`;
+                            }
+                            if (vhTop - height <= 0 && vhTop >= 0) {
+                                vh[i].classList.add("_active");
+                                vh[i + 1].classList.add("secBlock");
+                                vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
+                            } else {
+                                vh[i].classList.remove("_active");
+                                vh[i + 1].classList.remove("secBlock");
+                                vh[i + 1].style.marginTop = `0px`;
+                            }
                         }
-                        if (vhTop - height <= 0 && vhTop >= 0) {
-                            vh[i].classList.add("_active");
-                            vh[i + 1].classList.add("secBlock");
-                            vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
-                        } else {
-                            vh[i].classList.remove("_active");
-                            vh[i + 1].classList.remove("secBlock");
-                            vh[i + 1].style.marginTop = `0px`;
-                        }
-                    }
-                })); else vh.forEach((e => {
-                    e.classList.add("bigVH");
-                    let vhToggle = .01 * window.innerHeight;
-                    document.documentElement.style.setProperty("--vh", `${vhToggle}px`);
-                    console.log(vhToggle);
-                }));
-            }
+                    } else vh.forEach((e => {
+                        e.classList.add("bigVH");
+                        let vhToggle = .01 * window.innerHeight;
+                        document.documentElement.style.setProperty("--vh", `${vhToggle - .01}px`);
+                    }));
+                }
+            }));
         }
     };
     isWebp();

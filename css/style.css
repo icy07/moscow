@@ -804,6 +804,7 @@ h6 {
   overflow: hidden;
 }
 .sort__container {
+  position: relative;
   padding-top: 2.375rem;
   display: flex;
   flex-direction: column;
