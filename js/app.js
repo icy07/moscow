@@ -2231,7 +2231,7 @@
             if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                 if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
                     e.classList.add("vhBig");
-                    let vhBig = .01 * window.screen.height;
+                    let vhBig = .01 * window.innerHeight;
                     document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                 }));
                 if (!(vh[0].offsetHeight < window.screen.height) && !vh[0].classList.contains("vhBig")) fixedBlocks(vh, window.screen.height);
@@ -2251,7 +2251,7 @@
                     span5.innerHTML = vh[1].style.marginTop;
                     if (!(vh[0].offsetHeight < height) && !vh[0].classList.contains("vhBig")) fixedBlocks(vh, height); else vh.forEach((e => {
                         e.classList.add("vhBig");
-                        let vhBig = .01 * window.screen.height;
+                        let vhBig = .01 * window.innerHeight;
                         document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                     }));
                 }
