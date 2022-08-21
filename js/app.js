@@ -2227,6 +2227,7 @@
             let span2 = document.querySelector(".test__span2");
             let span3 = document.querySelector(".test__span3");
             let span4 = document.querySelector(".test__span4");
+            let span5 = document.querySelector(".test__span5");
             if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                 if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
                     e.style.height = window.screen.height + 1 + "px";
@@ -2236,6 +2237,7 @@
                 span2.innerHTML = window.screen.height;
                 span3.innerHTML = window.innerHeight;
                 span4.innerHTML = window.pageYOffset;
+                span5.innerHTML = vh[1].style.marginTop;
             }
             document.addEventListener("scroll", (function() {
                 if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
@@ -2244,6 +2246,7 @@
                     span2.innerHTML = window.screen.height;
                     span3.innerHTML = window.innerHeight;
                     span4.innerHTML = window.pageYOffset;
+                    span5.innerHTML = vh[1].style.marginTop;
                     if (!(vh[0].offsetHeight < height)) fixedBlocks(vh, height); else vh.forEach((e => {
                         e.style.height = window.screen.height + 1 + "px";
                     }));
