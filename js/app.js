@@ -2230,9 +2230,11 @@
             let span5 = document.querySelector(".test__span5");
             if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
                 if (vh[0].offsetHeight < window.screen.height) vh.forEach((e => {
-                    e.style.height = window.screen.height + 1 + "px";
+                    e.classList.add("vhBig");
+                    let vhBig = .01 * window.screen.height;
+                    document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                 }));
-                fixedBlocks(vh, window.screen.height);
+                if (!(vh[0].offsetHeight < window.screen.height) && !vh[0].classList.contains("vhBig")) fixedBlocks(vh, window.screen.height);
                 span1.innerHTML = vh[0].offsetHeight;
                 span2.innerHTML = window.screen.height;
                 span3.innerHTML = window.innerHeight;
@@ -2247,8 +2249,10 @@
                     span3.innerHTML = window.innerHeight;
                     span4.innerHTML = window.pageYOffset;
                     span5.innerHTML = vh[1].style.marginTop;
-                    if (!(vh[0].offsetHeight < height)) fixedBlocks(vh, height); else vh.forEach((e => {
-                        e.style.height = window.screen.height + 1 + "px";
+                    if (!(vh[0].offsetHeight < height) && !vh[0].classList.contains("vhBig")) fixedBlocks(vh, height); else vh.forEach((e => {
+                        e.classList.add("vhBig");
+                        let vhBig = .01 * window.screen.height;
+                        document.documentElement.style.setProperty("--vh", `${vhBig + .01}px`);
                     }));
                 }
             }));
@@ -2266,6 +2270,7 @@
                 vh[i].classList.add("_active");
                 vh[i + 1].classList.add("secBlock");
                 vh[i + 1].style.marginTop = `${vh[i].offsetHeight}px`;
+                console.log(vhTop - height);
             } else {
                 vh[i].classList.remove("_active");
                 vh[i + 1].classList.remove("secBlock");

@@ -476,7 +476,7 @@ h6 {
   z-index: 100;
 }
 .test p {
-  color: green;
+  color: blue;
 }
 
 .scroll {
@@ -508,22 +508,26 @@ h6 {
 .vh.vhBig {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .main {
   background: url("../img/bg.png") center/cover no-repeat;
+  padding: 12.5rem 0px 4.375rem 0px;
+}
+@media (max-width: 58.125em) {
+  .main {
+    padding: 6.25rem 0px 3.125rem 0px;
+  }
 }
 .main__container {
-  padding-top: 12.5rem;
-  padding-bottom: 4.375rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 58.125em) {
-  .main__container {
-    padding-top: 6.25rem;
-  }
 }
 .main__top {
   display: flex;
@@ -804,6 +808,10 @@ h6 {
 
 .sort {
   overflow: hidden;
+}
+.sort.vhBig .sort__img {
+  position: absolute;
+  bottom: 0;
 }
 .sort__container {
   position: relative;
