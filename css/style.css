@@ -234,10 +234,10 @@ h6 {
     display: none;
   }
 }
-.header__emblems img {
+.header__emblems picture img {
   max-width: 100%;
 }
-.header__emblems img:not(:last-child) {
+.header__emblems picture:not(:last-child) {
   margin: 0px 1.25rem 0px 0px;
 }
 .header__bottom {
