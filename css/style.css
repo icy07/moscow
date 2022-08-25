@@ -1194,6 +1194,8 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 76.875rem;
+  padding: 0;
 }
 .advice__title {
   line-height: 1.1666666667;
@@ -1254,7 +1256,7 @@ h6 {
   display: flex;
   justify-content: center;
   margin: 0.9375rem 0px 0px 0px;
-  padding: 0.1875rem;
+  padding: 0.5rem;
 }
 .advice__nav-btns .advice__swiper-button-prev,
 .advice__nav-btns .advice__swiper-button-next {
@@ -1302,6 +1304,11 @@ h6 {
 .advice__slide {
   display: flex;
   justify-content: center;
+  padding: 0 0.9375rem;
+}
+.advice__swiper {
+  margin: 0px auto;
+  padding: 1.5625rem 0rem;
 }
 .advice__link {
   display: inline-block;
@@ -1346,7 +1353,10 @@ h6 {
   align-items: flex-end;
 }
 .advice__link--4 {
+  background-color: #fff;
   border-radius: 50%;
+  min-width: 17.3125rem;
+  height: 17.3125rem;
   box-shadow: 0px 7px 24px 0 rgba(26, 26, 26, 0.2);
   display: flex;
   justify-content: center;
@@ -1423,37 +1433,6 @@ h6 {
 }
 .advice__4-orange {
   color: #ff8302;
-}
-.advice__all-link {
-  color: #ff8302;
-  font-weight: 800;
-}
-@media (min-width: 76.875em) {
-  .advice__all-link {
-    margin-top: 2.5rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 76.875em) {
-  @supports (margin-top: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
-    .advice__all-link {
-      margin-top: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem );
-    }
-  }
-  @supports not (margin-top: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
-    .advice__all-link {
-      margin-top: calc(1.25rem + 1.25 * (100vw - 20rem) / 56.875);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .advice__all-link {
-    margin-top: 1.25rem;
-  }
-}
-@media (any-hover: hover) {
-  .advice__all-link:hover {
-    text-decoration: underline;
-  }
 }
 
 .nums {
