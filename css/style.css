@@ -2330,6 +2330,28 @@ h6 {
 .article__sliders {
   position: relative;
 }
+@media (min-width: 76.875em) {
+  .article__sliders {
+    margin-bottom: 2.9375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 76.875em) {
+  @supports (margin-bottom: clamp( 1.875rem , 1.5013736264rem  +  1.8681318681vw , 2.9375rem )) {
+    .article__sliders {
+      margin-bottom: clamp( 1.875rem , 1.5013736264rem  +  1.8681318681vw , 2.9375rem );
+    }
+  }
+  @supports not (margin-bottom: clamp( 1.875rem , 1.5013736264rem  +  1.8681318681vw , 2.9375rem )) {
+    .article__sliders {
+      margin-bottom: calc(1.875rem + 1.0625 * (100vw - 20rem) / 56.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .article__sliders {
+    margin-bottom: 1.875rem;
+  }
+}
 .article__sliders .article__swiper-button-prev,
 .article__sliders .article__swiper-button-next {
   position: absolute;
