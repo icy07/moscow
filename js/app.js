@@ -5480,7 +5480,7 @@
     }
     function initSliders() {
         bildSliders();
-        if (document.querySelector(".article__slider")) {
+        if (document.querySelector(".swiper")) {
             let thumbsSwiper = new core(".article__slider-thumbs", {
                 modules: [ Navigation ],
                 observer: true,
@@ -5511,6 +5511,30 @@
                 navigation: {
                     prevEl: ".article__swiper-button-prev",
                     nextEl: ".article__swiper-button-next"
+                }
+            });
+            new core(".advice__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                speed: 400,
+                navigation: {
+                    prevEl: ".advice__swiper-button-prev",
+                    nextEl: ".advice__swiper-button-next"
+                },
+                breakpoints: {
+                    600: {
+                        slidesPerView: 2
+                    },
+                    860: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    1190: {
+                        slidesPerView: 4
+                    }
                 }
             });
         }
