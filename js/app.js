@@ -5518,7 +5518,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 15,
                 speed: 400,
                 navigation: {
                     prevEl: ".advice__swiper-button-prev",
@@ -5529,8 +5529,7 @@
                         slidesPerView: 2
                     },
                     860: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
+                        slidesPerView: 3
                     },
                     1190: {
                         slidesPerView: 4
