@@ -5536,6 +5536,26 @@
                     }
                 }
             });
+            new core(".video-slider__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 400,
+                navigation: {
+                    prevEl: ".video-slider__swiper-button-prev",
+                    nextEl: ".video-slider__swiper-button-next"
+                },
+                breakpoints: {
+                    700: {
+                        slidesPerView: 3
+                    },
+                    530: {
+                        slidesPerView: 2
+                    }
+                }
+            });
         }
     }
     window.addEventListener("load", (function(e) {
