@@ -5518,7 +5518,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                spaceBetween: 15,
+                spaceBetween: 0,
                 speed: 400,
                 navigation: {
                     prevEl: ".advice__swiper-button-prev",
@@ -5571,7 +5571,7 @@
         }
     }), 0);
     const elem = document.querySelector(".sort--blue");
-    const header = document.querySelector(".header");
+    const header = document.querySelector(".header-new");
     const headerTrigger = document.querySelector(".headerTrigger");
     window.onload = function() {
         if (headerTrigger) document.addEventListener("scroll", (function() {
