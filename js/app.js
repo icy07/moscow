@@ -5866,11 +5866,16 @@
     const header = document.querySelector(".header-new");
     const headerTrigger = document.querySelector(".headerTrigger");
     window.onload = function() {
-        if (headerTrigger) document.addEventListener("scroll", (function() {
-            const posTop = headerTrigger.getBoundingClientRect().top;
-            const headerHeight = header.offsetHeight;
+        if (headerTrigger) {
+            let headerHeight = header.offsetHeight;
+            let posTop = headerTrigger.getBoundingClientRect().top;
             header.classList.toggle("white", posTop - headerHeight <= 0);
-        }));
+            document.addEventListener("scroll", (function() {
+                let headerHeight = header.offsetHeight;
+                let posTop = headerTrigger.getBoundingClientRect().top;
+                header.classList.toggle("white", posTop - headerHeight <= 0);
+            }));
+        }
         if (elem) {
             const vh = document.querySelectorAll(".vh");
             if (document.documentElement.clientWidth < 1051 || document.documentElement.clientHeight < 611) {
