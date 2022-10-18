@@ -1513,7 +1513,7 @@ h6 {
 .nums__block::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: -0.625rem;
   top: 0;
   width: 0.0625rem;
   height: 100%;
