@@ -1483,6 +1483,11 @@ h6 {
 }
 .advice__link img {
   max-width: 100%;
+  -webkit-filter: drop-shadow(0px 2px 10px rgba(26, 26, 26, 0.2));
+  -moz-filter: drop-shadow(0px 2px 10px rgba(26, 26, 26, 0.2));
+  -ms-filter: drop-shadow(0px 2px 10px rgba(26, 26, 26, 0.2));
+  -o-filter: drop-shadow(0px 2px 10px rgba(26, 26, 26, 0.2));
+  filter: drop-shadow(0px 2px 10px rgba(26, 26, 26, 0.2));
 }
 @media (any-hover: hover) {
   .advice__link:hover {
