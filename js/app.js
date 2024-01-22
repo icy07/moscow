@@ -5920,6 +5920,30 @@
             }
         }
     }
+    let videosWithBtn = document.querySelectorAll(".videolessons__video-wrapper");
+    if (videosWithBtn) videosWithBtn.forEach((e => {
+        let playButton = e.querySelector(".videolessons__play-btn");
+        let video = e.querySelector(".videolessons__video");
+        playButton.addEventListener("click", (function() {
+            if (true == video.paused) {
+                video.play();
+                playButton.classList.add("_active");
+                video.setAttribute("controls", "");
+            } else {
+                video.pause();
+                playButton.classList.remove("_active");
+                video.removeAttribute("controls");
+            }
+        }));
+        video.addEventListener("pause", (function() {
+            playButton.classList.remove("_active");
+            video.removeAttribute("controls");
+        }));
+        video.addEventListener("play", (function() {
+            playButton.classList.add("_active");
+            video.setAttribute("controls", "");
+        }));
+    }));
     isWebp();
     menuInit();
 })();
