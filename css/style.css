@@ -5482,7 +5482,7 @@ h6 {
   }
 }
 .videolessons__block .videolessons__container {
-  max-width: 64.375rem;
+  max-width: 62.5rem;
 }
 .videolessons__block:nth-child(even) .videolessons__block-wraper {
   flex-direction: row-reverse;
@@ -5552,24 +5552,24 @@ h6 {
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 76.875em) {
+@media (min-width: 75em) {
   .videolessons__block-wraper {
-    gap: 6.25rem;
+    gap: 5rem;
   }
 }
-@media (min-width: 20em) and (max-width: 76.875em) {
-  @supports (gap: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem )) {
+@media (min-width: 40.625em) and (max-width: 75em) {
+  @supports (gap: clamp( 1.25rem , -3.1818181818rem  +  10.9090909091vw , 5rem )) {
     .videolessons__block-wraper {
-      gap: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem );
+      gap: clamp( 1.25rem , -3.1818181818rem  +  10.9090909091vw , 5rem );
     }
   }
-  @supports not (gap: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem )) {
+  @supports not (gap: clamp( 1.25rem , -3.1818181818rem  +  10.9090909091vw , 5rem )) {
     .videolessons__block-wraper {
-      gap: calc(1.25rem + 5 * (100vw - 20rem) / 56.875);
+      gap: calc(1.25rem + 3.75 * (100vw - 40.625rem) / 34.375);
     }
   }
 }
-@media (max-width: 20em) {
+@media (max-width: 40.625em) {
   .videolessons__block-wraper {
     gap: 1.25rem;
   }
@@ -5837,24 +5837,24 @@ h6 {
   font-weight: 800;
   letter-spacing: 4.8px;
 }
-@media (min-width: 76.875em) {
+@media (min-width: 75em) {
   .videolessons__lesson-num {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 20em) and (max-width: 76.875em) {
-  @supports (font-size: clamp( 1rem , 0.8241758242rem  +  0.8791208791vw , 1.5rem )) {
+@media (min-width: 40.625em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1rem , 0.4090909091rem  +  1.4545454545vw , 1.5rem )) {
     .videolessons__lesson-num {
-      font-size: clamp( 1rem , 0.8241758242rem  +  0.8791208791vw , 1.5rem );
+      font-size: clamp( 1rem , 0.4090909091rem  +  1.4545454545vw , 1.5rem );
     }
   }
-  @supports not (font-size: clamp( 1rem , 0.8241758242rem  +  0.8791208791vw , 1.5rem )) {
+  @supports not (font-size: clamp( 1rem , 0.4090909091rem  +  1.4545454545vw , 1.5rem )) {
     .videolessons__lesson-num {
-      font-size: calc(1rem + 0.5 * (100vw - 20rem) / 56.875);
+      font-size: calc(1rem + 0.5 * (100vw - 40.625rem) / 34.375);
     }
   }
 }
-@media (max-width: 20em) {
+@media (max-width: 40.625em) {
   .videolessons__lesson-num {
     font-size: 1rem;
   }
@@ -5865,24 +5865,24 @@ h6 {
   line-height: 1.1458333333;
   color: #12599b;
 }
-@media (min-width: 76.875em) {
+@media (min-width: 75em) {
   .videolessons__lesson-title {
     font-size: 3rem;
   }
 }
-@media (min-width: 20em) and (max-width: 76.875em) {
-  @supports (font-size: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+@media (min-width: 40.625em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.25rem , -0.8181818182rem  +  5.0909090909vw , 3rem )) {
     .videolessons__lesson-title {
-      font-size: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem );
+      font-size: clamp( 1.25rem , -0.8181818182rem  +  5.0909090909vw , 3rem );
     }
   }
-  @supports not (font-size: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  @supports not (font-size: clamp( 1.25rem , -0.8181818182rem  +  5.0909090909vw , 3rem )) {
     .videolessons__lesson-title {
-      font-size: calc(1.25rem + 1.75 * (100vw - 20rem) / 56.875);
+      font-size: calc(1.25rem + 1.75 * (100vw - 40.625rem) / 34.375);
     }
   }
 }
-@media (max-width: 20em) {
+@media (max-width: 40.625em) {
   .videolessons__lesson-title {
     font-size: 1.25rem;
   }
@@ -5890,7 +5890,7 @@ h6 {
 .videolessons__video-wrapper {
   z-index: 2;
   position: relative;
-  max-width: 37.5rem;
+  flex: 0 0 60%;
 }
 .videolessons__video {
   max-width: 100%;
