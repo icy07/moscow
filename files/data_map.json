@@ -1,0 +1,63 @@
+{
+	"data": {
+		"points": [
+			{
+				"geom": "POINT(37.411004999999996 55.73859099999998)",
+				"pointId": 11133,
+				"address": "г. Москва, Ярцевская улица 19",
+				"title": "Пункт приема электротехники и батареек в магазине \"Эльдорадо\"",
+				"categories": ["BATAREJKI"],
+				"businesHoursState": {
+					"allday": false,
+					"schedule": [
+						{ "dow": 0, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 1, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 2, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 3, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 4, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 5, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 6, "opens": ["09:00"], "closes": ["22:00"] }
+					]
+				}
+			},
+			{
+				"geom": "POINT(37.463826 55.72555399999998)",
+				"pointId": 11221,
+				"address": "г. Москва, Славянский бульвар 13с1",
+				"title": "Пункт приема электротехники и батареек в магазине Мвидео",
+				"categories": ["LAMPOCHKI"],
+				"businesHoursState": {
+					"allday": true,
+					"schedule": [
+						{ "dow": 0, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 1, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 2, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 3, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 4, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 5, "opens": ["00:00"], "closes": ["23:59"] },
+						{ "dow": 6, "opens": ["00:00"], "closes": ["23:59"] }
+					]
+				}
+			},
+			{
+				"geom": "POINT(37.819307 55.752784)",
+				"pointId": 11229,
+				"address": "г. Москва, Свободный проспект 33",
+				"title": "Пункт приема электротехники и батареек в магазине Мвидео",
+				"categories": ["BATAREJKI", "LAMPOCHKI"],
+				"businesHoursState": {
+					"allday": false,
+					"schedule": [
+						{ "dow": 0, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 1, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 2, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 3, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 4, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 5, "opens": ["09:00"], "closes": ["22:00"] },
+						{ "dow": 6, "opens": ["09:00"], "closes": ["22:00"] }
+					]
+				}
+			}
+		]
+	}
+}
